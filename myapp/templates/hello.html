@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Hello {{ name }}! Welcome</h1>
+	<p>This is your homepage</p>
+	 <p> person:{{ people.Travis }} </p>
+			
+	 {% for p in posts %}
+		 <p> {{p.author}} says: <strong>{{p.body}}</strong></p>
+		 {% endfor %}
+{% endblock  %}
+			 
+

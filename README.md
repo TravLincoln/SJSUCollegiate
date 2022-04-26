@@ -1,6 +1,6 @@
-# Studious!
+Collegiate!
 
-Basic Web app for making studying easier!
+Basic Web app for SJSU Student Forums!
 
  Made using Flask, Python, and SQLAlchemy
 
@@ -16,8 +16,8 @@ pip3 install markdown
 ## To run the app
 ```
 git clone git@github.com:TravLincoln/CMPE131ProjectTeam4.git
-cd CMPE131ProjectTeam4
-cd milestone2
+cd Collegiate133
+cd myapplications
 install the dependencies using the commands above
 python3 run.py
 ```

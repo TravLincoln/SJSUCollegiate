@@ -1,7 +1,32 @@
-{% extends "base.html" %}
-
+{% extends 'base.html' %}
+<head>
+	
+</head>	
 {% block content %}
 <h1>Hello {{ name }}! Welcome to Note Taker</h1>
-        <p>Time to take some notes:</p>
-	<p> {{title}} </p>
+<p>Time to take some notes:</p>
+<form method="POST" novalidate enctype="multipart/form-data">
+	{{ form.hidden_tag() }}
+	{% if form.file.errors %}
+	<ul class="errors">
+		{% for error in form.file.errors %}
+		<li>{{ error }}</li>
+		{% endfor %}
+	</ul>
+	{% endif %}
+	<p> {{ form.file }} </p>
+	<p> {{ form.submit() }} </p>
+</form>
+
+<h2>Note List</h2>
+{% for note in notes %}
+<div class="card">
+	<div class="card-body">
+		<h5 class="card-title">{{ note['timespam'] }}</h5>
+		<hr>
+		<p>{{ note['content']|safe }}</p>
+	</div>
+</div>
+<hr>
+{% endfor %}
 {% endblock %}

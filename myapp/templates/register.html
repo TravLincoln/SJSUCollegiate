@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+	<title>{{ title }}</title>
+</head>
+<div>
+<p>Let's Get Started!</p>
+<p>Please enter a Username and Password</p>
+</div>
+<form method = "POST" novalidate >
+	        {{ form.hidden_tag() }}
+
+		        <p> {{ form.username.label }} <br>
+			            {{ form.username }}</p>
+			        <p> {{ form.password.label }} <br>
+				            {{ form.password }}
+
+					        <p> {{ form.submit() }} </p>
+
+</form>
+<p>
+	<a href="/login">Already have an account? Log In</a><br>
+ 	<a href="/delete">Done with Studious? Delete Account</a>
+</p>
+{% endblock %}
+
+

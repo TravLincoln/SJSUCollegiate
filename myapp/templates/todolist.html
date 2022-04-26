@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+<head>
+    {% if title %}
+     <title>{{ title }}!</title>
+     {% else %}
+      <title >No Name </title>
+      {% endif %} 
+</head>
+
+{% block content %}
+<body>
+    <div>
+	    <h2>This is your To-Do List</h2>
+        <p style = "font-size: 16pt">Here you can create To-Do lists to keep yourself organized!</p>
+        <h3>Add Items Here:</h3>
+        <form action = "{{ url_for('add') }}" method = "POST">
+            <input type = "text" name = "todoitem">
+            <input type = "submit" value = "Add Item" class = "button">
+        </form>
+    </div>
+    <h2>Incomplete Items</h2>
+    <ol>
+        {% for todo in incomplete %}
+        <li style = "font-size: 20pt">{{ todo.todo_item}}<a href="{{ url_for('complete', id=todo.id) }}"> Completed</a></li>
+        {% endfor %}
+    </ol>
+    <h2>Completed Items</h2>
+    <ul>
+        {% for todo in complete %}
+        <li style = "font-size: 20pt"> {{ todo.todo_item }} </li>
+        {% endfor %}
+    </ul>
+
+</body>
+
+{% endblock  %}

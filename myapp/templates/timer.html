@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+<head>
+	<title>60 Second Timer </title>
+	
+	<style type="text/css"
+	       @font-face{
+	       		font-family: sevenSegment;
+	       		src: url(seven-segment.ttf);
+	       }
+		
+	
+	       h1{
+			font-family: sevenSegment;
+	       		font-size: 15em;
+	       }
+	<div class="container">
+		<h1 id="count">60</h1>
+	</div>
+
+	<script type="text/javascript">
+		var counter = 10;
+		setInterval( function(){
+			counter--;
+
+			if (counter >=0){
+				id = document.getElementById("count");
+				id.innerHTML = counter ;
+			}
+		},1000);
+	</script>
+</head>
+<body>
+
+</body>
+</html>

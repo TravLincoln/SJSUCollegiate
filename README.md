@@ -15,7 +15,7 @@ pip3 install markdown
 
 ## To run the app
 ```
-git clone git@github.com:TravLincoln/CMPE131ProjectTeam4.git
+git clone git@github.com:TravLincoln/SJSUCollegiate.git
 cd Collegiate133
 cd myapplications
 install the dependencies using the commands above
